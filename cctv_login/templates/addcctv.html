@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <title>Add CCTV</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='cctv.png') }}">
+    
+    <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" >
+    
+	<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-cruduser-add.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div class="topnav-left">
+                <a>Add CCTV</a>
+                <a class="btn btn-secondary" href="/dashboardadm/list_cctv">Back to list CCTV</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <form action="/dashboardadm/list_cctv/add_cctv" method=post>
+                <div class="mb-13 mt-3">
+                <label for="nama" class="form-label">Nama CCTV:</label>
+                <input type="input" class="form-control" placeholder="Nama" name="nama_cctv">
+                </div>
+                <div class="mb-1 mt-2">
+                <label for="univ" class="form-label">Link CCTV:</label>
+                <input type="input" class="form-control" placeholder="rtsp://user:12345@1.2.3.4:554" name="link_cctv">
+                </div>
+                <div class="mb-3 mt-2">
+                <label for="lok" class="form-label">Lokasi:</label>
+                <input type="input" class="form-control" placeholder="Lokasi" name="lokasi_cctv">
+                </div>
+                <button type="submit" class="btn btn-primary">Tambah</button><br>
+            </form>
+            <form method="POST" action="{{ url_for('database_cctv.get_file_import') }}" enctype="multipart/form-data">
+                <div class="tbh">
+                    <h6>Tambah CCTV dengan file</h6>
+                    <button class="btnn"><a href="{{ url_for('static', filename='import_cctv.csv') }}" class="btnn" download><i class="bi bi-download"></i> Download Format Input CCTV CSV</a></button><br>
+                    <div class="file">
+                    <label for="myfile">Masukkan file import format CSV:</label><br>
+                    <input type="file" id="myfile" name="import_file" class="box__dragndrop btnn" accept=".csv"multiple><br><br>
+                    <input type="submit" class="kirim">
+                    <div class="flash">
+                        {% with messages = get_flashed_messages(error) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body> 
