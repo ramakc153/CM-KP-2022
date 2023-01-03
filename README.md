@@ -17,9 +17,9 @@ How to Run?
 User : pep2
 Password : l0gin@kses
 
-or you can use your own sql account, just change it in auth.py and database_cctv.py files.
+or you can use your own sql account, just change it in auth.py and database_cctv.py and list_user.py files.
 
-4. Copy .mysql file, paste and run in phpmyadmin code section
+4. Make new database with name db-app-cctv then copy content in db-app-cctv.mysql file, paste and run in phpmyadmin SQL code section
 5. Run main.py
 
 Make sure you use same network with P_6C
