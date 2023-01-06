@@ -34,9 +34,9 @@ def get_db_user():
     closeDb()
 get_db_user()
 
-def add_user(nama_user, password, fullakses):
+def add_user(nama_user, password, lokasi):
     openDb()
-    cursor.execute('''INSERT INTO accounts(username,password,fullakses) VALUES(%s,%s,%s)''', (nama_user, password, fullakses))
+    cursor.execute('''INSERT INTO accounts(username,password,lokasi) VALUES(%s,%s,%s)''', (nama_user, password, lokasi))
     connection.commit()
     closeDb()
 
@@ -75,10 +75,10 @@ def update_user(id):    #edit cctv
     elif usernamepass[0] in admin and 'loggedin' in session and request.method == "POST" :
         nama_user = request.form['nama_user']
         pass_user = request.form['pass_user']
-        akses_user = request.form['fullakses']
+        akses_user = request.form['lokasi']
 
         openDb()
-        cursor.execute("UPDATE accounts SET username = %s, password = %s, fullakses = %s WHERE id = %s;", (nama_user, pass_user, akses_user, id))
+        cursor.execute("UPDATE accounts SET username = %s, password = %s, lokasi = %s WHERE id = %s;", (nama_user, pass_user, akses_user, id))
         connection.commit()
         closeDb()
 
@@ -93,7 +93,7 @@ def add_cctv_crud():
         
         nama_user = request.form['nama_user']
         pass_user = request.form['pass_user']
-        akses_user = request.form['fullakses']
+        akses_user = request.form['lokasi']
 
         add_user(nama_user, pass_user, akses_user)
 
