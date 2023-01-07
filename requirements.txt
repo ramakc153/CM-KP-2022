@@ -1,0 +1,6 @@
+flask
+flask-mySQLdb
+mysqlclient
+opencv-python
+pandas
+mysql-connector-python
