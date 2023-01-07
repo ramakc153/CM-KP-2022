@@ -6,9 +6,11 @@ Yang diperlukan:
 2. Library Flask
 3. Library Mysqldb
 4. Xampp
-5. Library Mysqldb.conecctor
+5. Library Mysqldb.connector
 6. Library OpenCV
 7. Library Pandas
+
+bisa diinstall dengan menjalankan pip install -r requirements.txt
 
 How to Run?
 1. Put all item in one Folder
