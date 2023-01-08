@@ -3,9 +3,11 @@ import mysql.connector
 from cctv_login import app
 import os, pandas as pd
 
+path = os.path.dirname(__file__)
 database = Blueprint('database_cctv', __name__)
 
-UPLOAD_FOLDER = r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\files'
+UPLOAD_FOLDER = f'{path}\static\pload'
+beras_video = f'{path}\static\signal.mp4'
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -24,7 +26,7 @@ def closeDb():
 
 #array load nama dan link camera dari databae
 #index array ke 2-3 merupakan nama dan link dari kamera yang akan diplay pada browser
-active_camera = [[],[],['WinCam1', 'WinCam2', 'WinCam3', 'WinCam4'],[r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4',r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4',r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4',r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4']]
+active_camera = [[],[],['WinCam1', 'WinCam2', 'WinCam3', 'WinCam4'],[beras_video,beras_video,beras_video,beras_video]]
 
 active_camera_client = [[],[],['WinCam1', 'WinCam2', 'WinCam3', 'WinCam4']]
 
