@@ -3,7 +3,7 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 from cctv_login import app
 from datetime import timedelta
-from cctv_login.database_cctv import active_camera, get_db_camera, active_camera_client, get_db_camera_client
+from cctv_login.database_cctv import active_camera, get_db_camera, active_camera_client, get_db_camera_client, beras_video
 
 akses = Blueprint('auth',__name__)
 admin=[None]
@@ -73,7 +73,7 @@ def logout():
     try:
         admin[0]="Gatek"
         user[0]="None"
-        active_camera[3] = [r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4',r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4',r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4',r'C:\Users\user\Downloads\KP2022-Clean\KP2022-Clean\Content\cctv_login\static\no-signal.mp4']
+        active_camera[3] = [beras_video,beras_video,beras_video,beras_video]
     except IndexError:
         pass
     # Redirect to login page
