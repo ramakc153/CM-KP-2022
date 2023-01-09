@@ -1,3 +1,0 @@
-File ini dibuat agar github tetap mendeteksi folder
-Folder ini diperlukan untuk tempat penampungan sementara
-format file csv add cctv
