@@ -3,5 +3,4 @@ flask-mySQLdb
 mysqlclient
 opencv-python
 pandas
-mysql-connector-python
-mysql-connector
+mysql-connector-python==8.0.29
