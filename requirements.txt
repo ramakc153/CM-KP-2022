@@ -4,3 +4,4 @@ mysqlclient
 opencv-python
 pandas
 mysql-connector-python
+mysql-connector
