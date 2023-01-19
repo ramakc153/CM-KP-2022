@@ -14,9 +14,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def openDb():
    global connection, cursor
    connection = mysql.connector.connect(host='localhost',
-                                         database='db-app-cctv',
-                                         user='pep2',
-                                         password='l0gin@kses')
+                                         database='pythonlogin',
+                                         user='root',
+                                         password='')
    cursor = connection.cursor()
 
 def closeDb():

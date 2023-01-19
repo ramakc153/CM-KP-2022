@@ -11,9 +11,9 @@ usernamepass=[None]
 user=[None]
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'pep2'
-app.config['MYSQL_PASSWORD'] = 'l0gin@kses'
-app.config['MYSQL_DB'] = 'db-app-cctv'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'pythonlogin'
 
 # Intialize MySQL
 mysql = MySQL(app)
