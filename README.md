@@ -26,4 +26,3 @@ or you can use your own sql account, just change it in auth.py, database_cctv.py
 5. Run main.py
 
 Make sure you use same network with the cctv
-testt
